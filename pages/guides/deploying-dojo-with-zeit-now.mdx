@@ -1,0 +1,40 @@
+import Guide from '~/components/layout/guide'
+import Snippet from '~/components/snippet'
+import Caption from '~/components/text/caption'
+import Link from '~/components/text/link'
+import { Image } from '~/components/media'
+import { InlineCode } from '~/components/text/code'
+import DeploySection from '~/components/guides/deploy-section'
+
+export const meta = {
+  title: 'Deploy Dojo with ZEIT Now',
+  description: 'Create a Dojo app and deploy it live with ZEIT Now.',
+  published: '2019-04-09T12:00:00.860Z',
+  authors: ['msweeneydev'],
+  url: '/guides/deploying-dojo-with-zeit-now',
+  demo: 'https://dojo.now-examples.now.sh',
+  image: '',
+  editUrl: 'pages/guides/deploying-dojo-with-zeit-now.mdx',
+  name: 'Dojo',
+  type: 'app',
+  lastEdited: '2020-04-09T12:36:41.000Z'
+}
+
+[Dojo](https://dojo.io/home) is a progressive framework for modern web apps. It provides a holistic approach to engineering modern web applications while remaining progressively modular in which aspects a project may utilize.
+
+## Step 1: Set Up Your Dojo Project
+
+Set up a Dojo app with [`npx`](https://www.npmjs.com/package/npx) and move into the project directory:
+
+<Snippet dark text="npx dojo create app --name my-dojo-app && cd my-dojo-app" />
+<Caption>Initializing a Dojo app with <Link href="https://www.npmjs.com/package/npx">npx</Link> and moving into the project directory.</Caption>
+
+## Step 2: Deploying Your Dojo App with ZEIT Now
+
+<DeploySection meta={meta} />
+
+export default ({ children }) => <Guide meta={meta}>{children}</Guide>
+
+export const config = {
+  amp: 'hybrid'
+}
