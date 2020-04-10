@@ -1,0 +1,77 @@
+import Doc from '~/components/layout/docs'
+import ProductName from '~/components/product-name'
+import { PRODUCT } from '~/lib/constants'
+import CheckmarkInCircle from '~/components/icons/checkmark-in-circle'
+import CrossInCircle from '~/components/icons/cross-in-circle'
+import { LI, CheckList } from '~/components/list'
+import Note from '~/components/text/note'
+
+export const meta = {
+  title: 'Fair Use Policy',
+  description: `Fair Use Policy for the ${PRODUCT} platform.`,
+  editUrl: 'pages/docs/v2/platform/fair-use-policy.mdx',
+  lastEdited: '2020-04-10T04:03:21.000Z'
+}
+
+All plans include unlimited Bandwidth, Builds, and Serverless Function Execution subject to our fair use policy. Below is a rule-of-thumb for determining which projects fall under the “Fair Use” category and which do not.
+
+### Fair Use
+
+<CheckList
+  items={[
+    'Jamstack sites and apps',
+    'Frontends',
+    'SPAs',
+    'Functions that render HTML',
+    'Functions that query DBs or APIs',
+    'Jamstack sites and apps',
+    'Blogs, e-commerce, marketing'
+  ]}
+/>
+
+### Not Fair Use
+
+<CheckList
+  cross
+  items={[
+    'Proxies and VPNs',
+    'Media hosting for hot-linking',
+    'Scrapers',
+    'Illegal Content'
+  ]}
+/>
+
+## Usage Guidelines
+
+We do not enforce caps on usage (bandwidth, serverless invocations, or build hours) on any of our account plans. As a guideline for our community, we expect most users to fall within the below ranges for each plan. We will notify you if your usage is an outlier. Our goal is to be as permissive as possible while not putting our business at risk economically. We'll never take a site down without notice, we'll reach out well ahead of any action and work with you to correct out of control usage.
+
+### Typical Monthly Usage Guidelines
+
+<br />
+
+|                                 | Hobby             | Pro         |
+| ------------------------------- | ----------------- | ----------- |
+| Bandwidth                       | Up to 1TB         | Up to 100GB |
+| Serverless Function Invocations | Up to 1,000GB/Hrs | 100GB/Hrs   |
+| Builds per Week                 | Up to 25          | Up to 100   |
+
+### Abuse Prevention Limits
+
+<br />
+
+|                                  | Hobby        | Pro          |
+| -------------------------------- | ------------ | ------------ |
+| Maximum Functions per Deployment | 12 Functions | 64 Functions |
+| Maximum Function Duration        | 3 Seconds    | 5 Seconds    |
+| Maximum CLI Deploys              | 25           | 25           |
+
+<Note>
+  Next.js Static Site Generation and Preview functions are excluded from the
+  count for "Maximum Functions per Deployment".
+</Note>
+
+export default ({ children }) => <Doc meta={meta}>{children}</Doc>
+
+export const config = {
+  amp: 'hybrid'
+}
